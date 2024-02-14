@@ -17,3 +17,15 @@ model User {
   updatedAt DateTime @updatedAt
   username  String   @unique
 }
+
+model Brand {
+  createdAt   DateTime @default(now())
+  description String?
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId
+  image       String?
+  isActive    Boolean?
+  merchant    String?
+  name        String?  @unique
+  slug        String
+  updatedAt   DateTime @updatedAt
+}
