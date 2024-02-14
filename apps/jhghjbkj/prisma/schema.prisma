@@ -17,3 +17,35 @@ model User {
   updatedAt DateTime @updatedAt
   username  String   @unique
 }
+
+model Brand {
+  createdAt   DateTime @default(now())
+  description String?
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId
+  image       String?
+  isActive    Boolean?
+  merchant    String?
+  name        String?  @unique
+  slug        String
+  updatedAt   DateTime @updatedAt
+}
+
+model Merchant {
+  brand       String?
+  brandName   String?
+  business    String?
+  createdAt   DateTime            @default(now())
+  email       String?             @unique
+  id          String              @id @default(auto()) @map("_id") @db.ObjectId
+  isActive    Boolean?
+  name        String?
+  phoneNumber String?             @unique
+  status      EnumMerchantStatus?
+  updatedAt   DateTime            @updatedAt
+}
+
+enum EnumMerchantStatus {
+  WaitingApproval
+  Rejected
+  Approved
+}

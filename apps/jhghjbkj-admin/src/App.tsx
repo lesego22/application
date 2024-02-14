@@ -9,6 +9,14 @@ import { UserList } from "./user/UserList";
 import { UserCreate } from "./user/UserCreate";
 import { UserEdit } from "./user/UserEdit";
 import { UserShow } from "./user/UserShow";
+import { BrandList } from "./brand/BrandList";
+import { BrandCreate } from "./brand/BrandCreate";
+import { BrandEdit } from "./brand/BrandEdit";
+import { BrandShow } from "./brand/BrandShow";
+import { MerchantList } from "./merchant/MerchantList";
+import { MerchantCreate } from "./merchant/MerchantCreate";
+import { MerchantEdit } from "./merchant/MerchantEdit";
+import { MerchantShow } from "./merchant/MerchantShow";
 import { jwtAuthProvider } from "./auth-provider/ra-auth-jwt";
 
 const App = (): React.ReactElement => {
@@ -41,6 +49,20 @@ const App = (): React.ReactElement => {
           edit={UserEdit}
           create={UserCreate}
           show={UserShow}
+        />
+        <Resource
+          name="Brand"
+          list={BrandList}
+          edit={BrandEdit}
+          create={BrandCreate}
+          show={BrandShow}
+        />
+        <Resource
+          name="Merchant"
+          list={MerchantList}
+          edit={MerchantEdit}
+          create={MerchantCreate}
+          show={MerchantShow}
         />
       </Admin>
     </div>
